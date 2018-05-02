@@ -17,8 +17,3 @@ script:
 
 after_success:
   - bin/deploy.sh
-
-notifications:
-  slack:
-    rooms:
-      - hackoregon2018:0hiZjZlexw6dfsIDpN4SsXls#disaster-resilience  
