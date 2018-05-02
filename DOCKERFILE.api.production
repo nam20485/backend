@@ -5,27 +5,8 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
 
-# Add Geo libraries
-RUN apt-get update && apt-get install -y \
-  binutils \
-  gdal-bin \
-  libgeos-dev \
-  libproj-dev \
-&& rm -rf /var/lib/apt/lists/*
-
-# add gnupg
-RUN apt-get update \
-  && apt-get install -qqy --no-install-recommends \
-  gnupg \
-  && apt-get clean
-
-RUN mkdir -p /etc/apt/sources.list.d/
-
-# COPY jessie/pgdg.list.jessie /etc/apt/sources.list.d/pgdg.list
-
 # add PostgreSQL client libraries
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
-  && apt-get update \
+RUN apt-get update \
   && apt-get install -qqy --no-install-recommends \
     libpq-dev \
     postgresql-client \
