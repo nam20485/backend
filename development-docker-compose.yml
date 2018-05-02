@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: DOCKERFILE.api.development
     image: api_development
-    command: ./bin/development-docker-entrypoint.sh
+    command: ./docker/development-docker-entrypoint.sh
     volumes:
       - .:/code
     ports:
