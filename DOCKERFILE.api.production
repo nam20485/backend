@@ -1,5 +1,5 @@
 FROM python:3.6
-MAINTAINER Brian H. Grant <brian@hackoregon.org> & "M. Edward (Ed) Borasky <znmeb@znmeb.net>
+LABEL MAINTAINER="Brian H. Grant <brian@hackoregon.org> & M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /code
